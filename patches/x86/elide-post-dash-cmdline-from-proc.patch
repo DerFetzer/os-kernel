@@ -1,7 +1,7 @@
 diff --git a/init/main.c b/init/main.c
 --- a/init/main.c
 +++ b/init/main.c
-@@ -573,9 +573,12 @@ asmlinkage __visible void __init start_kernel(void)
+@@ -822,9 +822,12 @@ asmlinkage __visible void __init start_kernel(void)
  				  static_command_line, __start___param,
  				  __stop___param - __start___param,
  				  -1, -1, NULL, &unknown_bootoption);
@@ -12,6 +12,5 @@ diff --git a/init/main.c b/init/main.c
  		parse_args("Setting init args", after_dashes, NULL, 0, -1, -1,
  			   NULL, set_init_arg);
 +	}
- 
- 	jump_label_init();
+	if (extra_init_args)
  
